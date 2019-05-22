@@ -1,0 +1,23 @@
+
+{
+    "Lookups":[
+      {"Name": "TDW_LUT_DENEME"}
+    ],
+    "Dimensions":[
+      {"Name": "TDW_DIM_ORGANIZATION"
+      },
+      {"Name": "TDW_DIM_DENEME2",
+      "Cols":[
+        {"Name":"DENEME_ID", "Reference":"TDW_LUT_DENEME", "Null":true, "OnDeleteCascade":true},
+        {"Name":"LOCATION", "Type":"varchar(200)", "Default":"SYSTEM", "Null": false}
+      ]
+      }
+    ],
+    "Mappings":[
+      {"Name": "TDW_MAP_DENEME", "Source":"TDW_DIM_DENEME", "Target": "TDW_DIM_DENEME2" }
+    ],
+    "Histories":[
+      {"Name": "TDW_HST_DENEME", "Cols":[{"Name": "DENEME_ID", "Reference":"TDW_LUT_DENEME", "Null":true }]}
+    ]
+
+}
